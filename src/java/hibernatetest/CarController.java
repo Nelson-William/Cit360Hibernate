@@ -12,6 +12,7 @@ import java.io.Serializable;
 /**
  *
  * @author willnelson
+ * Sandboxed and adjusted based on https://netbeans.org/kb/docs/web/hibernate-webapp.html
  */
 @Named(value = "carController")
 @SessionScoped

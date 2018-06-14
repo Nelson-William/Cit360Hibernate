@@ -12,6 +12,7 @@ import org.hibernate.Session;
 /**
  *
  * @author willnelson
+ * Sandboxed and adjusted based on https://netbeans.org/kb/docs/web/hibernate-webapp.html
  */
 public class CarHelper {
     
