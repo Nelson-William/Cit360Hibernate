@@ -5,6 +5,8 @@
  */
 package hibernatetest;
 
+import java.util.List;
+import org.hibernate.Query;
 import org.hibernate.Session;
 
 /**
@@ -17,5 +19,16 @@ public class CarHelper {
     
     public CarHelper() {
         this.session = HibernateUtil.getSessionFactory().getCurrentSession();
+    }
+    
+    public List getCarModels(int idcar) {
+        List<Car> modelList = null;
+        try{
+            org.hibernate.Transaction tx = session.beginTransaction();
+            Query q = session.createQuery("from Car as model where model.idcar in (select model.idcar from Car as model where model.idcar='" + idcar + "')");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return modelList;
     }
 }
